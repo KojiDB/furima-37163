@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password: ENV["BASIC_AUTH_PASSWORD"]
+  password:
   socket: /tmp/mysql.sock
 
 development:
@@ -51,4 +51,4 @@ production:
   <<: *default
   database: furima_37163_production
   username: furima_37163
-  password: 
+  password: <%= ENV['FURIMA_37163_DATABASE_PASSWORD'] %>

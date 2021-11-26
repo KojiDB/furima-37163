@@ -2,20 +2,20 @@
 
 ## users テーブル
 
-| Column          | Type       | Options                        |
-| --------------- | ---------- | ------------------------------ |
-| nickname        | string     | null: false                    |
-| email           | string     | null: false                    |
-| password        | string     | null: false                    |
-| first_name      | string     | null: false                    |
-| last_name       | string     | null: false                    |
-| first_name_read | string     | null: false                    |
-| last_name_read  | string     | null: false                    |
-| phone_number    | integer    | null: false                    |
-| birth_y         | integer    | null: false                    |
-| birth_m         | integer    | null: false                    |
-| birth_d         | integer    | null: false                    |
-| address         | references | null: false, foreign_key: true |
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| nickname           | string     | null: false                    |
+| email              | string     | null: false                    |
+| encrypted_password | string     | null: false                    |
+| first_name         | string     | null: false                    |
+| last_name          | string     | null: false                    |
+| first_name_read    | string     | null: false                    |
+| last_name_read     | string     | null: false                    |
+| phone_number       | integer    | null: false                    |
+| birth_y            | integer    | null: false                    |
+| birth_m            | integer    | null: false                    |
+| birth_d            | integer    | null: false                    |
+| address            | references | null: false, foreign_key: true |
 
 - has_many :items
 - has_many :comments

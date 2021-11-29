@@ -11,7 +11,7 @@
 | last_name          | string     | null: false                    |
 | first_name_read    | string     | null: false                    |
 | last_name_read     | string     | null: false                    |
-| birth_day          | integer    | null: false                    |
+| birth_day          | date       | null: false                    |
 
 - has_many :items
 - has_many :comments
@@ -24,11 +24,11 @@
 | name               | string     | null: false                    |
 | introduction       | text       | null: false                    |
 | price              | integer    | null: false                    |
-| category_id        | references | null: false,                   |
-| item_conditions_id | references | null: false,                   |
-| area_id            | references | null: false,                   |
-| postage_fee_id     | references | null: false,                   |
-| postage_day_id     | references | null: false,                   |
+| category_id        | integer    | null: false,                   |
+| item_conditions_id | integer    | null: false,                   |
+| area_id            | integer    | null: false,                   |
+| postage_fee_id     | integer    | null: false,                   |
+| postage_day_id     | integer    | null: false,                   |
 | user               | references | null: false, foreign_key: true |
 
 - has_many :comments
@@ -40,11 +40,11 @@
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | post_number   | string     | null: false                    |
-| prefecture    | string     | null: false                    |
+| area_id       | integer    | null: false                    |
 | city          | string     | null: false                    |
 | street_number | string     | null: false                    |
 | building_name | string     |                                |
-| user          | references | null: false, foreign_key: true |
+| buyer         | references | null: false, foreign_key: true |
 
 - belongs_to :user
 
@@ -52,8 +52,8 @@
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| user_id | references | null: false, foreign_key: true |
-| item_id | references | null: false, foreign_key: true |
+| user    | references | null: false, foreign_key: true |
+| item    | references | null: false, foreign_key: true |
 | comment | text       | null: false                    |
 
 - belongs_to :user
@@ -63,10 +63,9 @@
 
 | Column     | Type       | Options                     |
 | ---------- | ---------- | --------------------------- |
-| user_id    | references | null:false,foreign_key:true |
-| item_id    | references | null:false,foreign_key:true |
-| address_id | references | null:false,foreign_key:true |
+| user       | references | null:false,foreign_key:true |
+| item       | references | null:false,foreign_key:true |
 
 - belongs_to :user
 - belongs_to :item
-- belongs_to :address
+- has_one :address

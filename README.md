@@ -15,7 +15,6 @@
 
 - has_many :items
 - has_many :comments
-- has_one :address
 - has_one :buyer
 
 ## items テーブル
@@ -32,7 +31,6 @@
 | postage_day_id     | references | null: false,                   |
 | user               | references | null: false, foreign_key: true |
 
-- has_many :item_images
 - has_many :comments
 - has_one :buyer
 - belongs_to :user
@@ -49,14 +47,6 @@
 | user          | references | null: false, foreign_key: true |
 
 - belongs_to :user
-
-## item_images テーブル
-
-| Column     | Type       | Options                        |
-| ---------- | ---------- | ------------------------------ |
-| item_id    | references | null: false, foreign_key: true |
-
-- belongs_to :item
 
 ## comments テーブル
 

@@ -15,7 +15,7 @@
 
 - has_many :items
 - has_many :comments
-- has_one :buyer
+- has_many :buyers
 
 ## items テーブル
 
@@ -44,9 +44,10 @@
 | city          | string     | null: false                    |
 | street_number | string     | null: false                    |
 | building_name | string     |                                |
+| phone_number  | string     | null: false                    |
 | buyer         | references | null: false, foreign_key: true |
 
-- belongs_to :user
+- belongs_to :buyer
 
 ## comments テーブル
 

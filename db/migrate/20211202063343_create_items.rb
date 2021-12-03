@@ -8,7 +8,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer :item_conditions_id, null: false
       t.integer :area_id,            null: false
       t.integer :postage_fee_id,     null: false
-      t.integer :postege_day_id,     null: false
+      t.integer :postage_day_id,     null: false
       t.references :user,            null: false, foreign_key: true
       t.timestamps
     end

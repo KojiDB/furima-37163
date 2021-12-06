@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   before_action :move_to_root_path, only: [:index, :create]
 
   def index
-    @order = Order.new
+    @order_address = OrderAddress.new
   end
 
   def create

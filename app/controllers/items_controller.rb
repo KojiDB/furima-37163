@@ -25,6 +25,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    if @item.buyer.present?
+      redirect_to root_path
+    end
   end
 
   def update
@@ -45,7 +48,7 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :introduction, :price, :category_id, :item_conditions_id,
-                                 :area_id, :postage_fee_id, :postage_day_id, :image).merge(user_id: current_user.id)
+                                 :area_id, :postage_fee_id, :postage_day_id, :image, :price).merge(user_id: current_user.id)
   end
 
   def find_item

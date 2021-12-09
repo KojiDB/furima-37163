@@ -19,11 +19,12 @@ class Item < ApplicationRecord
 
   belongs_to :user
   has_one_attached :image
+  has_one :buyer
   
   belongs_to :category
   belongs_to :area
   belongs_to :item_conditions
   belongs_to :postage_fee
   belongs_to :postage_day
-
+  
 end
